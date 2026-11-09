@@ -1,10 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".VerificationActivity">
+    android:orientation="horizontal"
+    android:weightSum="1">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/img_photo_kn"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.3"
+        android:background="#1E3A5F"
+        android:contentDescription="Photo du voyageur"
+        android:padding="12dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/khalil" />
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.7"
+        android:background="#14213D"
+        android:padding="20dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_titre_kn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="#33FFD54F"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:strokeColor="#FFD54F"
+            app:strokeWidth="1dp">
+
+            <TextView
+                android:id="@+id/tv_titre_kn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:letterSpacing="0.15"
+                android:paddingStart="14dp"
+                android:paddingTop="6dp"
+                android:paddingEnd="14dp"
+                android:paddingBottom="6dp"
+                android:text="PASSEPORT TEMPOREL"
+                android:textColor="#FFD54F"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tv_label_nom_kn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/card_titre_kn"
+            android:layout_marginTop="28dp"
+            android:letterSpacing="0.1"
+            android:text="NOM DU VOYAGEUR"
+            android:textColor="#8D99AE"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/tv_nom_kn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_label_nom_kn"
+            android:layout_marginTop="2dp"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_label_age_kn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_nom_kn"
+            android:layout_marginTop="20dp"
+            android:letterSpacing="0.1"
+            android:text="ÂGE TEMPOREL"
+            android:textColor="#8D99AE"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/tv_age_kn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_label_age_kn"
+            android:layout_marginTop="2dp"
+            android:textColor="#FFD54F"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_label_motif_kn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_age_kn"
+            android:layout_marginTop="20dp"
+            android:letterSpacing="0.1"
+            android:text="MOTIF DU VOYAGE"
+            android:textColor="#8D99AE"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/tv_motif_kn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_label_motif_kn"
+            android:layout_marginTop="2dp"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_refuser_kn"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_alignParentBottom="true"
+            android:text="Refuser (Risque de paradoxe)"
+            android:textAllCaps="false"
+            android:textColor="#E74C3C"
+            app:backgroundTint="@android:color/transparent"
+            app:cornerRadius="14dp"
+            app:strokeColor="#E74C3C"
+            app:strokeWidth="2dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_approuver_kn"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_above="@id/btn_refuser_kn"
+            android:layout_marginBottom="10dp"
+            android:text="Approuver le saut temporel"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            app:backgroundTint="#2ECC71"
+            app:cornerRadius="14dp" />
+
+    </RelativeLayout>
+</LinearLayout>
