@@ -52,6 +52,15 @@ public class ResultActivity extends AppCompatActivity {
             tvMessage.setText(nom + " est en état d'arrestation temporelle");
         }
 
+        // animation ll icons
+        tvIcone.setAlpha(0f);
+        tvIcone.setScaleX(0.3f);
+        tvIcone.setScaleY(0.3f);
+        tvIcone.animate().alpha(1f).scaleX(1f).scaleY(1f).setDuration(600).start();
+
+        tvMessage.setAlpha(0f);
+        tvMessage.animate().alpha(1f).setStartDelay(400).setDuration(600).start();
+
         // nrj3ou ll MainActivity w nsakrou el activities el 9dom
         btnNouveau.setOnClickListener(v -> {
             Intent i = new Intent(ResultActivity.this, MainActivity.class);
