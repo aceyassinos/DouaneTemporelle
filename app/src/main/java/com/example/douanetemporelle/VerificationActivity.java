@@ -1,6 +1,7 @@
 package com.example.douanetemporelle;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
@@ -46,6 +47,19 @@ public class VerificationActivity extends AppCompatActivity {
         tvNom.setText(nom);
         tvAge.setText(ageTemporel + " ans");
         tvMotif.setText(motif);
+
+        // nhsbou risque level hasb reason mta3 safar w adding colors hasb risque
+        TextView tvRisque = findViewById(R.id.tv_risque_kn);
+        if (motif != null && motif.toLowerCase().contains("modification")) {
+            tvRisque.setText("RISQUE DE PARADOXE : ÉLEVÉ");
+            tvRisque.setTextColor(Color.parseColor("#E74C3C"));
+        } else if (motif != null && motif.toLowerCase().contains("fuite")) {
+            tvRisque.setText("RISQUE DE PARADOXE : MOYEN");
+            tvRisque.setTextColor(Color.parseColor("#F39C12"));
+        } else {
+            tvRisque.setText("RISQUE DE PARADOXE : FAIBLE");
+            tvRisque.setTextColor(Color.parseColor("#2ECC71"));
+        }
 
         // ken el motif "Modification du passé" w el farq 3adad premier il bouton approuver twali disabled
         if (motif != null && motif.toLowerCase().contains("modification")
